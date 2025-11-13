@@ -19,7 +19,7 @@ This document includes: Features • Installation • Usage • Building • Con
 
 ---
 
-### **Option 1 — Windows Installer (Recommended)**
+### Windows Installer (Recommended)**
 
 1. Download `EbookReader-1.0.msi` from Releases  
 2. Run the installer  
@@ -28,13 +28,6 @@ This document includes: Features • Installation • Usage • Building • Con
 
 ---
 
-### **Option 2 — Run the JAR (Cross‑platform)**
-
-```bash
-java -jar ebook-reader-1.0.jar
-```
-
----
 
 # 💻 Usage
 
@@ -84,8 +77,8 @@ java -jar ebook-reader-1.0.jar
 
 ### **Clone Repository**
 ```bash
-git clone https://github.com/yourusername/ebook-reader.git
-cd ebook-reader
+git clone https://github.com/yourusername/transparent-ebook-reader.git
+cd transparent-ebook-reader
 ```
 
 ---
