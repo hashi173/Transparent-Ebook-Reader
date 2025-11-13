@@ -6,7 +6,6 @@
 ![Screenshot 4](images/4.png)
 
 A modern, feature-rich desktop ebook reader built with JavaFX.  
-This document includes: Features • Installation • Usage • Building • Contributing
 
 ---
 
