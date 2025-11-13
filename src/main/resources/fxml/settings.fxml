@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ebook.reader.controller.SettingsController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <!-- Top toolbar -->
+    <top>
+        <ToolBar>
+            <Button text="← Back to Library" onAction="#handleBackToLibrary" styleClass="toolbar-button"/>
+            <Label text="Settings" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        </ToolBar>
+    </top>
+
+    <!-- Center: Settings form -->
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <!-- Appearance Settings -->
+                <VBox spacing="10">
+                    <Label text="Appearance" styleClass="section-title"/>
+                    <Separator/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Default Theme:" minWidth="150"/>
+                        <ComboBox fx:id="themeComboBox" prefWidth="200"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Default Font Size:" minWidth="150"/>
+                        <Spinner fx:id="fontSizeSpinner" prefWidth="100"/>
+                    </HBox>
+
+                    <Label text="💡 Changes apply to EPUB books in the reader"
+                           style="-fx-font-size: 12px; -fx-text-fill: #6b7280; -fx-font-style: italic;"/>
+                </VBox>
+
+                <!-- Database Settings -->
+                <VBox spacing="10">
+                    <Label text="Database" styleClass="section-title"/>
+                    <Separator/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Button text="Clear All Data" onAction="#handleClearData"
+                                style="-fx-background-color: #d9534f; -fx-text-fill: white;"/>
+                        <Label text="⚠️ This will remove all books from library"
+                               style="-fx-font-size: 12px; -fx-text-fill: #dc2626;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- About -->
+                <VBox spacing="10">
+                    <Label text="About" styleClass="section-title"/>
+                    <Separator/>
+
+                    <Label text="Ebook Reader v1.0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <Label text="A JavaFX-based ebook reader for EPUB and PDF files"/>
+                    <Label text="Built with Java 17, JavaFX 21, Epublib, and Apache PDFBox"/>
+                    <Label text="© 2025 - Open Source Project"/>
+                </VBox>
+
+                <!-- Save button -->
+                <HBox spacing="10" alignment="CENTER">
+                    <padding>
+                        <Insets top="20" right="0" bottom="0" left="0"/>
+                    </padding>
+                    <Button text="Save Settings" onAction="#handleSaveSettings"
+                            styleClass="toolbar-button" prefWidth="150"/>
+                    <Button text="Reset to Defaults" onAction="#handleResetSettings"
+                            prefWidth="150"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

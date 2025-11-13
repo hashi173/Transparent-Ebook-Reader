@@ -1,0 +1,276 @@
+/* ============================================
+   DARK THEME - Modern & Elegant
+   ============================================ */
+
+.root {
+    -fx-font-family: "Inter", "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    -fx-base: #1f2937;
+    -fx-background: #111827;
+    -fx-control-inner-background: #1f2937;
+    -fx-accent: #3b82f6;
+    -fx-focus-color: #60a5fa;
+    -fx-text-fill: #e5e7eb;
+}
+
+/* Toolbar */
+.tool-bar {
+    -fx-background-color: linear-gradient(to bottom, #1f2937 0%, #111827 100%);
+    -fx-border-color: #374151;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}
+
+.toolbar-button {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6 0%, #2563eb 100%);
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 10, 0, 0, 2);
+}
+
+.toolbar-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #60a5fa 0%, #3b82f6 100%);
+    -fx-effect: dropshadow(gaussian, rgba(96, 165, 250, 0.6), 15, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.toolbar-button:pressed {
+    -fx-background-color: #1e40af;
+}
+
+/* Status bar */
+.status-bar {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 10 20;
+}
+
+.status-bar .label {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 13px;
+}
+
+/* Book Grid */
+.book-grid {
+    -fx-background-color: #111827;
+    -fx-padding: 30;
+}
+
+.book-scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* Book Card */
+.book-card {
+    -fx-background-color: #1f2937;
+    -fx-background-radius: 12;
+    -fx-border-color: #374151;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 3);
+    -fx-cursor: hand;
+    -fx-padding: 16;
+}
+
+.book-card:hover {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 25, 0, 0, 5);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.book-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #f9fafb;
+}
+
+.book-author {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9ca3af;
+}
+
+.book-card .button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+
+.book-card .button:hover {
+    -fx-background-color: #60a5fa;
+}
+
+/* Reader pane */
+.reader-pane {
+    -fx-background-color: #111827;
+}
+
+/* Navigation bar */
+.navigation-bar {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12 20;
+}
+
+.navigation-bar .label {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 14px;
+}
+
+.navigation-bar .button {
+    -fx-text-overrun: clip;
+}
+
+/* TOC */
+.toc-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #f9fafb;
+    -fx-background-color: #1f2937;
+    -fx-padding: 16;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #1f2937;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e5e7eb;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #374151;
+    -fx-background-radius: 6;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(59, 130, 246, 0.3);
+    -fx-text-fill: #60a5fa;
+    -fx-background-radius: 6;
+    -fx-font-weight: 500;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #e5e7eb;
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #f9fafb;
+}
+
+/* Input fields */
+.text-field, .combo-box {
+    -fx-background-color: #374151;
+    -fx-text-fill: #e5e7eb;
+    -fx-border-color: #4b5563;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 8, 0, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #374151;
+    -fx-text-fill: #e5e7eb;
+}
+
+/* Progress bar */
+.progress-bar {
+    -fx-background-color: #374151;
+    -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #60a5fa);
+    -fx-background-radius: 10;
+}
+
+/* Slider */
+.slider .track {
+    -fx-background-color: #374151;
+    -fx-background-radius: 10;
+}
+
+.slider .thumb {
+    -fx-background-color: #3b82f6;
+    -fx-background-radius: 50%;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.6), 10, 0, 0, 0);
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #60a5fa;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #111827;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #4b5563;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #6b7280;
+}
+
+/* Split pane */
+.split-pane {
+    -fx-background-color: #111827;
+}
+
+.split-pane-divider {
+    -fx-background-color: #374151;
+    -fx-padding: 0 1 0 1;
+}
+
+/* Footer */
+.footer {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 12 20;
+}
+
+.footer .label {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 13px;
+}
+
+/* Button general */
+.button {
+    -fx-cursor: hand;
+    -fx-text-overrun: clip;
+}
