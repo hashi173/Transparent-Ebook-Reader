@@ -19,7 +19,7 @@ This document includes: Features • Installation • Usage • Building • Con
 
 ---
 
-### Windows Installer (Recommended)**
+### **Windows Installer (Recommended)**
 
 1. Download `EbookReader-1.0.msi` from Releases  
 2. Run the installer  
