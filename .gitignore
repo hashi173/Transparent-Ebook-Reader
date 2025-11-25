@@ -1,0 +1,75 @@
+#########################################
+# Java + Maven project ignore rules
+#########################################
+
+# Maven build
+/target/
+*/target/
+
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# Java
+*.class
+*.log
+
+#########################################
+# JLINK + JPACKAGE output
+#########################################
+
+# jlink runtime image
+/dist/
+/dist/runtime/
+/runtime/
+/image/
+/app/
+
+# jpackage installer output
+/installer/
+*.msi
+*.exe
+*.app
+*.dmg
+
+#########################################
+# Build tools
+#########################################
+/build/
+/out/
+
+#########################################
+# IntelliJ IDEA
+#########################################
+.idea/
+*.iml
+*.ipr
+*.iws
+
+#########################################
+# VS Code
+#########################################
+.vscode/
+
+#########################################
+# Eclipse
+#########################################
+.classpath
+.project
+.settings/
+.apt_generated/
+.factorypath
+
+#########################################
+# NetBeans
+#########################################
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+#########################################
+# OS files
+#########################################
+.DS_Store
+Thumbs.db

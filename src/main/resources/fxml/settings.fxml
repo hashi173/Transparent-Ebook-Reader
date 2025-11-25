@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ebook.reader.controller.SettingsController"
+            prefHeight="750.0" prefWidth="1000.0"
+            style="-fx-background-color: #fafafa;">
+
+    <!-- Header -->
+    <top>
+        <VBox>
+            <ToolBar style="-fx-background-color: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%); -fx-border-color: #e5e7eb; -fx-border-width: 0 0 1 0;">
+                <Button text="← Back to Library" onAction="#handleBackToLibrary"
+                        styleClass="toolbar-button"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="⚙ Settings"
+                       style="-fx-font-size: 20px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+            <VBox spacing="20" styleClass="settings-panel">
+
+            <padding>
+                    <Insets top="30" right="40" bottom="30" left="40"/>
+                </padding>
+
+                <!-- ========== APPEARANCE SECTION ========== -->
+                <VBox spacing="15" styleClass="settings-section">
+
+                <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="🎨" style="-fx-font-size: 24px;"/>
+                        <Label text="Appearance"
+                               style="-fx-font-size: 18px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <GridPane hgap="20" vgap="15">
+                        <!-- Theme -->
+                        <Label text="Default Theme:"
+                               GridPane.columnIndex="0" GridPane.rowIndex="0"
+                               style="-fx-font-weight: 500; -fx-text-fill: #374151;"/>
+                        <ComboBox fx:id="themeComboBox"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                  prefWidth="200"/>
+                        <Label text="Theme for reading interface"
+                               GridPane.columnIndex="2" GridPane.rowIndex="0"
+                               style="-fx-text-fill: #9ca3af; -fx-font-size: 12px;"/>
+
+                        <!-- Font Size -->
+                        <Label text="Default Font Size:"
+                               GridPane.columnIndex="0" GridPane.rowIndex="1"
+                               style="-fx-font-weight: 500; -fx-text-fill: #374151;"/>
+                        <Spinner fx:id="fontSizeSpinner"
+                                 GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                 prefWidth="100"/>
+                        <Label text="Font size for EPUB books"
+                               GridPane.columnIndex="2" GridPane.rowIndex="1"
+                               style="-fx-text-fill: #9ca3af; -fx-font-size: 12px;"/>
+
+                        <!-- Font Family -->
+                        <Label text="Font Family:"
+                               GridPane.columnIndex="0" GridPane.rowIndex="2"
+                               style="-fx-font-weight: 500; -fx-text-fill: #374151;"/>
+                        <ComboBox fx:id="fontFamilyComboBox"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                  prefWidth="200"/>
+                        <Label text="Default font for reading"
+                               GridPane.columnIndex="2" GridPane.rowIndex="2"
+                               style="-fx-text-fill: #9ca3af; -fx-font-size: 12px;"/>
+                    </GridPane>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #f0f9ff; -fx-padding: 12; -fx-background-radius: 6; -fx-border-color: #bfdbfe; -fx-border-width: 1; -fx-border-radius: 6;">
+                        <Label text="💡" style="-fx-font-size: 16px;"/>
+                        <Label text="Changes apply to EPUB books when you open them in the reader"
+                               wrapText="true"
+                               style="-fx-text-fill: #1e40af; -fx-font-size: 13px;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- ========== CUSTOM FONTS SECTION ========== -->
+                <VBox spacing="15" styleClass="settings-section">
+
+                <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="📚" style="-fx-font-size: 24px;"/>
+                        <Label text="Custom Font Families"
+                               style="-fx-font-size: 18px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <!-- Instructions Card -->
+                    <VBox spacing="10"
+                          style="-fx-background-color: #fef3c7; -fx-padding: 15; -fx-background-radius: 8; -fx-border-color: #fcd34d; -fx-border-width: 1; -fx-border-radius: 8;">
+                        <Label text="How to Add Custom Fonts:"
+                               style="-fx-font-weight: 600; -fx-text-fill: #92400e; -fx-font-size: 14px;"/>
+                        <VBox spacing="5">
+                            <Label text="1. Click 'Add Font Family' below"
+                                   style="-fx-text-fill: #92400e; -fx-font-size: 13px;"/>
+                            <Label text="2. Select font files (.ttf or .otf) - you can select multiple files at once"
+                                   style="-fx-text-fill: #92400e; -fx-font-size: 13px;"/>
+                            <Label text="3. For best results, include all 4 variants: Regular, Bold, Italic, Bold Italic"
+                                   style="-fx-text-fill: #92400e; -fx-font-size: 13px;"/>
+                            <Label text="4. The app will automatically detect variants and group them into a family"
+                                   style="-fx-text-fill: #92400e; -fx-font-size: 13px;"/>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Action Buttons -->
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Button text="➕ Add Font Family"
+                                onAction="#handleAddFont"
+                                prefWidth="180"
+                                style="-fx-background-color: linear-gradient(to bottom, #3b82f6 0%, #2563eb 100%); -fx-text-fill: white; -fx-font-weight: 500; -fx-background-radius: 8; -fx-padding: 10 20; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.3), 8, 0, 0, 2);"/>
+                        <Button text="➖ Remove Selected"
+                                onAction="#handleRemoveFont"
+                                prefWidth="150"
+                                style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: 500; -fx-background-radius: 8; -fx-padding: 10 20; -fx-cursor: hand;"/>
+                    </HBox>
+
+                    <!-- Font List with Header -->
+                    <VBox spacing="10">
+                        <Label text="Installed Custom Fonts:"
+                               style="-fx-font-weight: 500; -fx-text-fill: #374151;"/>
+                        <ListView fx:id="customFontsList"
+                                  prefHeight="180"
+                                  style="-fx-border-color: #d1d5db; -fx-border-radius: 8; -fx-background-radius: 8;"/>
+                    </VBox>
+
+                    <!-- Help Text -->
+                    <HBox spacing="10" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #f0fdf4; -fx-padding: 12; -fx-background-radius: 6; -fx-border-color: #bbf7d0; -fx-border-width: 1; -fx-border-radius: 6;">
+                        <Label text="📖" style="-fx-font-size: 16px;"/>
+                        <VBox spacing="5">
+                            <Label text="Where to find free fonts:"
+                                   style="-fx-text-fill: #166534; -fx-font-weight: 600; -fx-font-size: 13px;"/>
+                            <Label text="• Google Fonts (fonts.google.com) - Download the full family (all variants)"
+                                   style="-fx-text-fill: #166534; -fx-font-size: 12px;"/>
+                            <Label text="• Font Squirrel (fontsquirrel.com) - Free for commercial use"
+                                   style="-fx-text-fill: #166534; -fx-font-size: 12px;"/>
+                            <Label text="• Adobe Fonts - If you have Creative Cloud subscription"
+                                   style="-fx-text-fill: #166534; -fx-font-size: 12px;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- ========== DATABASE SECTION ========== -->
+                <VBox spacing="15" styleClass="settings-section">
+
+                <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="🗄" style="-fx-font-size: 24px;"/>
+                        <Label text="Database Management"
+                               style="-fx-font-size: 18px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Button text="🗑️ Clear All Data"
+                                onAction="#handleClearData"
+                                prefWidth="150"
+                                style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: 500; -fx-background-radius: 8; -fx-padding: 10 20; -fx-cursor: hand;"/>
+                        <Label text="⚠️ This will remove all books from library (original files won't be deleted)"
+                               wrapText="true"
+                               style="-fx-text-fill: #dc2626; -fx-font-size: 13px;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- ========== ABOUT SECTION ========== -->
+                <VBox spacing="15" styleClass="settings-section">
+
+                <padding>
+                        <Insets top="25" right="25" bottom="25" left="25"/>
+                    </padding>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="ℹ" style="-fx-font-size: 24px;"/>
+                        <Label text="About"
+                               style="-fx-font-size: 18px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <VBox spacing="8">
+                        <Label text="Transparent Ebook Reader"
+                               style="-fx-font-size: 16px; -fx-font-weight: 600; -fx-text-fill: #111827;"/>
+                        <Label text="Version 1.0"
+                               style="-fx-text-fill: #6b7280;"/>
+                        <Label text="A modern JavaFX-based ebook reader for EPUB and PDF files"
+                               style="-fx-text-fill: #6b7280;"/>
+                        <Label text="Built with Java 17, JavaFX 21, and Apache PDFBox"
+                               style="-fx-text-fill: #6b7280;"/>
+                        <Label text="© 2025 - Open Source Project"
+                               style="-fx-text-fill: #6b7280; -fx-font-style: italic;"/>
+                    </VBox>
+                </VBox>
+
+                <!-- ========== ACTION BUTTONS ========== -->
+                <HBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="10" right="0" bottom="20" left="0"/>
+                    </padding>
+                    <Button text="💾 Save Settings"
+                            onAction="#handleSaveSettings"
+                            prefWidth="180"
+                            style="-fx-background-color: linear-gradient(to bottom, #3b82f6 0%, #2563eb 100%); -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: 600; -fx-background-radius: 8; -fx-padding: 12 24; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.4), 12, 0, 0, 3);"/>
+                    <Button text="🔄 Reset to Defaults"
+                            onAction="#handleResetSettings"
+                            prefWidth="180"
+                            style="-fx-background-color: white; -fx-text-fill: #374151; -fx-border-color: #d1d5db; -fx-border-width: 1; -fx-font-size: 14px; -fx-font-weight: 500; -fx-background-radius: 8; -fx-padding: 12 24; -fx-cursor: hand;"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

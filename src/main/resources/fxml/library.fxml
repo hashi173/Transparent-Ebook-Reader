@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ebook.reader.controller.LibraryController"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <!-- Top toolbar -->
+    <top>
+        <VBox>
+            <!-- Main toolbar -->
+            <ToolBar>
+                <Button text="➕ Add Book" onAction="#handleAddBook" styleClass="toolbar-button"/>
+                <Separator orientation="VERTICAL"/>
+                <Label text="Filter:"/>
+                <ComboBox fx:id="filterComboBox" prefWidth="150"/>
+                <Separator orientation="VERTICAL"/>
+                <TextField fx:id="searchField" promptText="🔍 Search books..." prefWidth="350"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="⚙ Settings" onAction="#handleSettings" styleClass="toolbar-button"/>
+            </ToolBar>
+
+            <!-- Status bar -->
+            <HBox styleClass="status-bar">
+                <padding>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
+                </padding>
+                <Label fx:id="statusLabel" text="📚 Library"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Book grid -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="book-scroll-pane">
+            <FlowPane fx:id="bookGrid"
+                      hgap="20"
+                      vgap="20"
+                      styleClass="book-grid">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </FlowPane>
+        </ScrollPane>
+    </center>
+
+    <!-- Bottom: Footer -->
+    <bottom>
+        <HBox styleClass="footer" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Transparent Ebook Reader v1.0 | JavaFX Application"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

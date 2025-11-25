@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ebook.reader.controller.ReaderController"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <!-- Top toolbar -->
+    <top>
+        <VBox>
+            <ToolBar>
+                <Button text="← Library" onAction="#handleBackToLibrary" styleClass="toolbar-button" minWidth="110"/>
+                <Separator orientation="VERTICAL"/>
+                <Button fx:id="toggleTocButton" text="Hide TOC" onAction="#handleToggleTOC" styleClass="toolbar-button" minWidth="90"/>
+                <Button text="Bookmarks" onAction="#handleShowBookmarks" styleClass="toolbar-button" minWidth="100"/>
+                <Button text="Add Bookmark" onAction="#handleAddBookmark" styleClass="toolbar-button" minWidth="120"/>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Settings" onAction="#handleToggleSettings" styleClass="toolbar-button" minWidth="90"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Fullscreen (F11)" onAction="#handleFullScreen" styleClass="toolbar-button" minWidth="130"/>
+            </ToolBar>
+
+            <!-- Settings Panel (collapsible) -->
+            <VBox fx:id="settingsPanel" spacing="15">
+                <padding>
+                    <Insets top="15" right="20" bottom="15" left="20"/>
+                </padding>
+
+                <Label text="📖 Reading Settings" styleClass="settings-title"/>
+
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <!-- Font Size -->
+                    <VBox spacing="5">
+                        <Label text="Font Size:" styleClass="settings-label"/>
+                        <ComboBox fx:id="fontSizeCombo" prefWidth="100"/>
+                    </VBox>
+
+                    <!-- Font Family -->
+                    <VBox spacing="5">
+                        <Label text="Font Family:" styleClass="settings-label"/>
+                        <ComboBox fx:id="fontFamilyCombo" prefWidth="150"/>
+                    </VBox>
+
+                    <!-- Theme -->
+                    <VBox spacing="5">
+                        <Label text="Theme:" styleClass="settings-label"/>
+                        <ComboBox fx:id="themeCombo" prefWidth="120"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="💡 Tip: Changes apply immediately. Go to Settings to add custom fonts."
+                       styleClass="settings-hint"/>
+            </VBox>
+
+
+            <!-- Page navigation -->
+            <HBox alignment="CENTER" spacing="10" styleClass="navigation-bar">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Button fx:id="prevButton" text="◄ Previous" onAction="#handlePrevPage" prefWidth="120"/>
+                <Slider fx:id="pageSlider" prefWidth="400" min="0" max="100"/>
+                <Label fx:id="pageLabel" text="Page 1 / 100" prefWidth="120" alignment="CENTER"/>
+                <Button fx:id="nextButton" text="Next ►" onAction="#handleNextPage" prefWidth="120"/>
+                <Button fx:id="backButton" text="↶ Back to Original" onAction="#handleBackNavigation"
+                        prefWidth="140" visible="false" managed="false"
+                        style="-fx-background-color: #f59e0b; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Reader pane -->
+    <center>
+        <SplitPane fx:id="mainSplitPane" dividerPositions="0.2">
+            <!-- Table of Contents sidebar -->
+            <VBox fx:id="tocPane" minWidth="200">
+                <Label text="📑 Table of Contents" styleClass="toc-title">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                </Label>
+                <ListView fx:id="tocListView" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <!-- Main reading area -->
+            <StackPane fx:id="readerPane" styleClass="reader-pane">
+                <!-- EPUB WebView -->
+                <WebView fx:id="epubWebView" visible="true" managed="true"/>
+
+                <!-- PDF ScrollPane with ImageView -->
+                <ScrollPane fx:id="pdfScrollPane" fitToWidth="true" fitToHeight="true" visible="false" managed="false">
+                    <content>
+                        <StackPane>
+                            <ImageView fx:id="pdfImageView" preserveRatio="true" smooth="true"/>
+                        </StackPane>
+                    </content>
+                </ScrollPane>
+            </StackPane>
+        </SplitPane>
+    </center>
+
+</BorderPane>
