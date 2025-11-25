@@ -18,14 +18,47 @@ A modern, feature-rich desktop ebook reader built with JavaFX.
 
 ---
 
-### **Windows Installer (Recommended)**
+## **✨ Features (Updated 2025)**
+### 📖 Reading
 
-1. Download `EbookReader-1.0.msi` from Releases  
-2. Run the installer  
-3. Follow the setup wizard  
-4. Launch from Start Menu or Desktop shortcut  
+- Smooth EPUB rendering (WebView-based)
+- Optimized PDF rendering (PDFBox 3.0)
+- Auto-save reading progress (scroll position / page)
+- Fullscreen mode (F11)
+- Next/previous page navigation
+- Fast PDF page loading (improved caching)
 
----
+### 🎨 Themes & UI
+
+-3 themes: Light / Dark / Sepia
+- Adjustable font size
+- Custom embedded fonts for a beautiful reading experience
+- Modern UI (Inter/SF-inspired)
+
+### 📚 Book Management
+
+- Import multiple EPUB/PDF at once
+- Automatic metadata extraction (title, author)
+- Book thumbnails
+- Favorite marking (❤️)
+- Reading history saved automatically
+
+### 🔧 Settings
+
+- Choose theme
+- Change font size
+- Saved instantly without restart
+
+### 🗂️ Data
+
+- Local SQLite database
+- Stores: Books, Favorites, Reading Progress, Settings
+
+### 💾 Portable Runtime Bundled
+
+- Works on ANY Windows machine
+- No Java required
+- Just unzip → run EbookReader.exe
 
 
 # 💻 Usage
@@ -60,7 +93,7 @@ A modern, feature-rich desktop ebook reader built with JavaFX.
 ## **Customizing Settings**
 - Click **Settings**
 - Choose theme: Light / Dark / Sepia  
-- Adjust font size  
+- Adjust font size, custom fonts
 - Changes apply instantly  
 
 ---
