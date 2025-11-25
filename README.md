@@ -28,7 +28,7 @@ A modern, feature-rich desktop ebook reader built with JavaFX.
 
 ### 🎨 Themes & UI
 
--3 themes: Light / Dark / Sepia
+- 3 themes: Light / Dark / Sepia
 - Adjustable font size
 - Custom embedded fonts for a beautiful reading experience
 - Modern UI (Inter/SF-inspired)
