@@ -12,9 +12,7 @@ A modern, feature-rich desktop ebook reader built with JavaFX.
 ## 🚀 Installation
 
 ### **Prerequisites**
-- Java 17 or higher  
-- Windows 10/11 (for MSI installer)  
-- Linux/macOS (for JAR execution)
+- Windows 
 
 ---
 
